@@ -1,0 +1,34 @@
+[
+  {
+    "name": "growth-strategist",
+    "description": "Route ambiguous growth problems to the right diagnostic, identify the binding constraint, and define the next evidence-backed decision."
+  },
+  {
+    "name": "growth-audit",
+    "description": "Audit a product's growth system across measurement, market, acquisition, activation, retention, revenue, and execution."
+  },
+  {
+    "name": "growth-roadmap",
+    "description": "Turn a diagnosed growth constraint into a focused quarterly plan with outcomes, experiments, owners, and decision rules."
+  },
+  {
+    "name": "channel-fit-diagnostic",
+    "description": "Choose acquisition channels by testing product, market, model, and channel fit before committing meaningful budget or time."
+  },
+  {
+    "name": "product-led-acquisition",
+    "description": "Design product mechanics that expose value to non-users and create natural invitations, collaboration, or shareable outputs."
+  },
+  {
+    "name": "retention-state",
+    "description": "Design ethical value accrual that makes continued product use more useful through data, reputation, audience, graph, or workflow state."
+  },
+  {
+    "name": "power-user-curve",
+    "description": "Build L7 or L30 core-action histograms to measure engagement depth, identify power users, and compare cohort movement."
+  },
+  {
+    "name": "saas-unit-economics-audit",
+    "description": "Audit SaaS unit economics by segment using gross-margin LTV, CAC, payback, retention, and sensitivity analysis."
+  }
+]
