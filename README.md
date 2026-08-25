@@ -1,82 +1,112 @@
 # Growth Skills
 
-Eight evidence-first Agent Skills for diagnosing and planning product growth.
+Fourteen evidence-first Agent Skills that connect growth strategy to verified execution.
 
-This repository is for operators who want a decision system, not a bag of tactics. The skills separate facts from assumptions, find the binding constraint, and produce a concrete next move with a measurement plan.
+This repository is for operators who want a decision system, not a bag of tactics. The skills separate facts from assumptions, identify the binding constraint, design a focused intervention, test it, and operationalize only what works.
 
-## Catalog
+## Packs
+
+Install only the pack you need. Every skill remains independently usable.
+
+### Strategy and diagnosis
 
 | Skill | Use it for |
 |---|---|
-| `growth-strategist` | Route an ambiguous growth question to the right diagnostic |
-| `growth-audit` | Build an evidence-backed baseline across the full growth system |
-| `growth-roadmap` | Turn a diagnosed constraint into a focused quarterly plan |
-| `channel-fit-diagnostic` | Choose the acquisition channel the product can structurally support |
-| `product-led-acquisition` | Design product mechanics that naturally create new users |
-| `retention-state` | Build value that compounds with continued product use |
-| `power-user-curve` | Measure engagement depth with L7 or L30 activity histograms |
-| `saas-unit-economics-audit` | Test whether acquisition and retention economics can support growth |
+| `growth-strategist` | Route an ambiguous growth problem and select the next diagnostic |
+| `growth-audit` | Build an evidence-backed baseline across the growth system |
+| `customer-research` | Extract pains, triggers, objections, alternatives, and decision criteria |
+| `channel-fit-diagnostic` | Choose channels the product, market, and model can support |
+| `power-user-curve` | Measure engagement depth and cohort movement |
+| `saas-unit-economics-audit` | Test CAC, payback, margin, retention, and LTV by segment |
+| `growth-roadmap` | Turn one constraint into a focused quarterly plan |
+
+### Execution and learning
+
+| Skill | Use it for |
+|---|---|
+| `offer-design` | Build a credible, deliverable commercial offer |
+| `onboarding-activation` | Shorten the path to a measurable first-value event |
+| `product-led-acquisition` | Expose product value to non-users through normal use |
+| `viral-loop` | Measure and improve invitations, collaboration, and sharing loops |
+| `retention-state` | Build ethical compounding value and switching costs |
+| `experiment-design` | Convert an intervention into a decision-ready test |
+| `marketing-loops` | Repeat proven actions with state, approvals, verification, and stop rules |
+
+## Full growth-system chain
+
+[`chains/growth-system.md`](chains/growth-system.md) connects the repository end to end:
+
+```text
+route
+  → baseline audit
+  → constraint-specific diagnosis
+  → quarterly roadmap
+  → intervention design
+  → experiment
+  → verified execution
+  → recurring loop for winners
+  → refreshed strategy
+```
+
+The chain is an invoke-in-order playbook, not a workflow engine. Conditional stages run only when the active constraint requires them. The machine-readable stage manifest is [`chains/growth-system.json`](chains/growth-system.json).
 
 ## Install
 
-Clone the repository, then copy or symlink the folders under `skills/` into the skills directory used by your Agent Skills-compatible client.
+Clone the repository, then copy or symlink individual folders under `skills/` into the skill directory used by your Agent Skills-compatible client.
 
 ```bash
 git clone https://github.com/<owner>/growth-skills.git
 ```
 
-Examples of common destinations:
+Common destinations include:
 
-```bash
-# Claude Code
-cp -R growth-skills/skills/* ~/.claude/skills/
+- Claude Code: `~/.claude/skills/`
+- Codex: `~/.codex/skills/`
+- Cursor: the configured skills directory
+- OpenClaw: the configured skills directory
 
-# Codex
-cp -R growth-skills/skills/* ~/.codex/skills/
-```
-
-Other clients can load each `skills/<name>/SKILL.md` directly. No specific model, provider, analytics vendor, or connector is required.
+Install the strategy pack first. Add execution skills only when the agent must operate that part of the chain.
 
 ## Use
 
-Invoke a specific skill when you know the job:
+Invoke a skill by name, or start with the chain:
 
 ```text
-Use channel-fit-diagnostic to decide whether this product should lead with paid search, outbound, or product-led sharing.
+Follow the growth-system chain for this product. Stop after each gate when evidence is missing.
 ```
 
-Start with `growth-strategist` when the problem is still vague:
-
-```text
-Use growth-strategist to find why growth stalled and choose the next diagnostic.
-```
-
-Live data is optional. When data is unavailable, the skills label assumptions and request the smallest useful export instead of inventing precision.
-
-## Quality bar
-
-Every skill includes:
+Each skill defines:
 
 - required inputs;
-- an ordered procedure;
+- an evidence-aware procedure;
 - a concrete output contract;
-- guardrails against common bad calls;
+- guardrails and stop conditions;
 - handoffs to the next relevant skill.
 
-Run the repository checks with:
+## Non-goals
+
+This repository does not:
+
+- provide platform credentials or private integrations;
+- assume access to a particular analytics or advertising vendor;
+- auto-spend, publish, message users, or modify production systems;
+- replace legal, privacy, finance, or statistical review;
+- promise universal growth benchmarks;
+- bundle imported marketing packs or client playbooks.
+
+## Validation
 
 ```bash
 make validate
 make test
 ```
 
-## Non-goals
+Validation checks catalog and chain parity, frontmatter, description and file-size limits, symlink escapes, common secret formats, and blocked private patterns. The test suite covers failure cases.
 
-- channel execution playbooks for ads, SEO, lifecycle messaging, or copywriting;
-- private analytics integrations or account-specific instructions;
-- universal benchmark targets detached from segment, model, and date;
-- automatic spending, publishing, or account changes.
+## Provenance and license
 
-## License and sources
+Repository-authored content is available under the [MIT License](LICENSE). Framework-level influences and the quotation policy are documented in [SOURCES.md](SOURCES.md). Third-party trademarks and source materials remain the property of their owners.
 
-Repository-authored content is MIT licensed. The frameworks cited in `SOURCES.md`, along with associated names and trademarks, remain the property of their respective owners. Attribution does not imply endorsement.
+## Contributing and security
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before proposing a skill. Report sensitive findings through [SECURITY.md](SECURITY.md), not a public issue.

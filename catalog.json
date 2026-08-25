@@ -8,20 +8,12 @@
     "description": "Audit a product's growth system across measurement, market, acquisition, activation, retention, revenue, and execution."
   },
   {
-    "name": "growth-roadmap",
-    "description": "Turn a diagnosed growth constraint into a focused quarterly plan with outcomes, experiments, owners, and decision rules."
+    "name": "customer-research",
+    "description": "Turn interviews, support records, reviews, and behavioral evidence into ranked customer pains, triggers, objections, and decision criteria."
   },
   {
     "name": "channel-fit-diagnostic",
     "description": "Choose acquisition channels by testing product, market, model, and channel fit before committing meaningful budget or time."
-  },
-  {
-    "name": "product-led-acquisition",
-    "description": "Design product mechanics that expose value to non-users and create natural invitations, collaboration, or shareable outputs."
-  },
-  {
-    "name": "retention-state",
-    "description": "Design ethical value accrual that makes continued product use more useful through data, reputation, audience, graph, or workflow state."
   },
   {
     "name": "power-user-curve",
@@ -30,5 +22,37 @@
   {
     "name": "saas-unit-economics-audit",
     "description": "Audit SaaS unit economics by segment using gross-margin LTV, CAC, payback, retention, and sensitivity analysis."
+  },
+  {
+    "name": "growth-roadmap",
+    "description": "Turn a diagnosed growth constraint into a focused quarterly plan with outcomes, experiments, owners, and decision rules."
+  },
+  {
+    "name": "offer-design",
+    "description": "Design an offer by aligning the buyer outcome, mechanism, proof, risk reversal, price, and delivery constraints without fake urgency."
+  },
+  {
+    "name": "onboarding-activation",
+    "description": "Design onboarding around a measurable activation event, shorten time to value, remove friction, and recover stalled users."
+  },
+  {
+    "name": "product-led-acquisition",
+    "description": "Design product mechanics that expose value to non-users and create natural invitations, collaboration, or shareable outputs."
+  },
+  {
+    "name": "viral-loop",
+    "description": "Measure, design, and improve product-embedded sharing loops using cohort attribution, step-level conversion, loop speed, and decay analysis."
+  },
+  {
+    "name": "retention-state",
+    "description": "Design ethical value accrual that makes continued product use more useful through data, reputation, audience, graph, or workflow state."
+  },
+  {
+    "name": "experiment-design",
+    "description": "Turn a growth hypothesis into a decision-ready experiment with one primary metric, guardrails, exposure rules, and a precommitted analysis plan."
+  },
+  {
+    "name": "marketing-loops",
+    "description": "Turn a proven growth action into a safe recurring loop with explicit triggers, state, approvals, idempotency, monitoring, and stop conditions."
   }
 ]

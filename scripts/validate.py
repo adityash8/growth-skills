@@ -24,6 +24,22 @@ PRIVATE_PATTERNS = (
     "." + "agent" + "/",
 )
 HOME_PATH = re.compile(r"/(?:Users|home)/[^/\s]+/", re.IGNORECASE)
+SECRET_PATTERNS = (
+    ("cloud key", re.compile(r"\bAKIA[0-9A-Z]{16}\b")),
+    ("provider token", re.compile(r"\bsk-(?:proj-)?[A-Za-z0-9_-]{20,}\b")),
+    ("source-control token", re.compile(r"\b(?:gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,})\b")),
+    ("chat token", re.compile(r"\bxox[baprs]-[A-Za-z0-9-]{20,}\b")),
+    ("platform key", re.compile(r"\bAIza[0-9A-Za-z_-]{30,}\b")),
+    ("payment key", re.compile(r"\b(?:sk|rk)_live_[0-9A-Za-z]{16,}\b")),
+    ("signed token", re.compile(r"\beyJ[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\b")),
+    (
+        "assigned credential",
+        re.compile(
+            r"\b(?:api[_-]?key|access[_-]?token|client[_-]?secret|secret)\s*[:=]\s*[\"'][A-Za-z0-9/+_.=-]{16,}[\"']",
+            re.IGNORECASE,
+        ),
+    ),
+)
 SKIP_PARTS = {".git", "__pycache__", ".pytest_cache"}
 
 
@@ -98,7 +114,7 @@ def validate(root: Path) -> list[str]:
     disk_names = {
         path.name
         for path in skills_root.iterdir()
-        if path.is_dir() and (path / "SKILL.md").is_file()
+        if path.is_dir()
     } if skills_root.is_dir() else set()
 
     if disk_names != set(entries):
@@ -109,9 +125,34 @@ def validate(root: Path) -> list[str]:
         if extra:
             errors.append(f"skills: uncataloged directories {', '.join(extra)}")
 
+    chain_path = root / "chains" / "growth-system.json"
+    try:
+        chain = json.loads(chain_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        errors.append(f"chains/growth-system.json: {exc}")
+    else:
+        stages = chain.get("stages") if isinstance(chain, dict) else None
+        if not isinstance(stages, list):
+            errors.append("chains/growth-system.json: stages must be a list")
+        else:
+            referenced: set[str] = set()
+            for index, stage in enumerate(stages):
+                skills = stage.get("skills") if isinstance(stage, dict) else None
+                if not isinstance(skills, list) or not all(isinstance(name, str) for name in skills):
+                    errors.append(f"chains/growth-system.json stages[{index}]: skills must be a string list")
+                    continue
+                referenced.update(skills)
+                unknown = sorted(set(skills) - set(entries))
+                if unknown:
+                    errors.append(f"chains/growth-system.json stages[{index}]: unknown skills {', '.join(unknown)}")
+            omitted = sorted(set(entries) - referenced)
+            if omitted:
+                errors.append(f"chains/growth-system.json: catalog skills missing from chain {', '.join(omitted)}")
+
     for expected_name, catalog_description in sorted(entries.items()):
         path = skills_root / expected_name / "SKILL.md"
         if not path.is_file():
+            errors.append(f"{path.relative_to(root)}: missing SKILL.md")
             continue
         try:
             name, description = parse_frontmatter(path)
@@ -135,13 +176,18 @@ def validate(root: Path) -> list[str]:
     for path in text_files(root):
         text = path.read_text(encoding="utf-8")
         lowered = text.lower()
+        blocked_private = False
         for pattern in PRIVATE_PATTERNS:
             if pattern.lower() in lowered:
                 errors.append(f"{path.relative_to(root)}: blocked private pattern")
+                blocked_private = True
                 break
-        else:
-            if HOME_PATH.search(text):
-                errors.append(f"{path.relative_to(root)}: absolute home path")
+        if not blocked_private and HOME_PATH.search(text):
+            errors.append(f"{path.relative_to(root)}: absolute home path")
+        for label, pattern in SECRET_PATTERNS:
+            if pattern.search(text):
+                errors.append(f"{path.relative_to(root)}: possible {label}")
+                break
 
     return errors
 
@@ -155,7 +201,7 @@ def main() -> int:
         for error in errors:
             print(f"ERROR: {error}")
         return 1
-    print("validated catalog, skill frontmatter, size limits, and public-safety rules")
+    print("validated catalog, chain, skill frontmatter, size limits, and public-safety rules")
     return 0
 
 

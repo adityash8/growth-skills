@@ -1,0 +1,60 @@
+{
+  "name": "growth-system",
+  "mode": "ordered-stages-with-conditional-branches",
+  "stages": [
+    {
+      "id": "route",
+      "skills": ["growth-strategist"],
+      "output": "growth brief"
+    },
+    {
+      "id": "baseline",
+      "skills": ["growth-audit"],
+      "output": "audit scorecard"
+    },
+    {
+      "id": "diagnose",
+      "skills": [
+        "customer-research",
+        "channel-fit-diagnostic",
+        "power-user-curve",
+        "saas-unit-economics-audit"
+      ],
+      "selection": "invoke only specialists required by the current constraint",
+      "output": "constraint brief"
+    },
+    {
+      "id": "roadmap",
+      "skills": ["growth-roadmap"],
+      "output": "quarterly roadmap"
+    },
+    {
+      "id": "design",
+      "skills": [
+        "offer-design",
+        "onboarding-activation",
+        "product-led-acquisition",
+        "viral-loop",
+        "retention-state"
+      ],
+      "selection": "route by the diagnosed constraint",
+      "output": "intervention specification"
+    },
+    {
+      "id": "test",
+      "skills": ["experiment-design"],
+      "output": "experiment specification"
+    },
+    {
+      "id": "operationalize",
+      "skills": ["marketing-loops"],
+      "condition": "only after evidence supports repeating the action",
+      "output": "loop specification"
+    },
+    {
+      "id": "learn",
+      "skills": ["growth-audit", "growth-roadmap", "growth-strategist"],
+      "output": "decision record and refreshed constraint"
+    }
+  ]
+}

@@ -10,6 +10,11 @@ Framework-level influences:
 - **SaaS unit economics:** David Skok's SaaS Metrics 2.0 and related public writing. Used in `saas-unit-economics-audit`.
 - **Lean experiment design and painted-door tests:** established lean product-development practice. Used in `channel-fit-diagnostic` and `growth-roadmap`.
 - **Constraint-first growth planning:** synthesized from growth-model, funnel, and experimentation practice. Used in `growth-strategist`, `growth-audit`, and `growth-roadmap`.
+- **Viral loop measurement and design:** Andrew Chen's public writing on viral loops and cohort-based product growth. Used at framework level in `viral-loop`.
+- **Customer decision research:** jobs-to-be-done interview practice and continuous product-discovery methods. Used in `customer-research` without reproducing proprietary exercises.
+- **Controlled experimentation:** standard randomized-experiment and causal-inference practice. Used in `experiment-design`.
+- **Reliable recurring operations:** idempotency, durable state, bounded authority, and fail-closed automation practice. Used in `marketing-loops`.
+- **Offer and activation design:** synthesized from product marketing, risk-reversal, conversion, and activation practice. Used in `offer-design` and `onboarding-activation`.
 
 ## Attribution policy
 

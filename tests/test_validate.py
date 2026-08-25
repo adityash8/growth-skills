@@ -23,6 +23,7 @@ class ValidateTests(unittest.TestCase):
         self.skill.parent.mkdir(parents=True)
         self.write_catalog(self.description)
         self.write_skill(self.description)
+        self.write_chain([self.name])
 
     def tearDown(self):
         self.temp.cleanup()
@@ -39,13 +40,21 @@ class ValidateTests(unittest.TestCase):
             encoding="utf-8",
         )
 
+    def write_chain(self, skills: list[str]):
+        path = self.root / "chains" / "growth-system.json"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(
+            json.dumps({"name": "test-chain", "stages": [{"id": "test", "skills": skills}]}),
+            encoding="utf-8",
+        )
+
     def test_valid_repository(self):
         self.assertEqual([], VALIDATE.validate(self.root))
 
     def test_missing_skill(self):
         self.skill.unlink()
         errors = VALIDATE.validate(self.root)
-        self.assertTrue(any("missing directories" in error for error in errors))
+        self.assertTrue(any("missing SKILL.md" in error for error in errors))
 
     def test_malformed_frontmatter(self):
         self.skill.write_text("# Missing frontmatter\n", encoding="utf-8")
@@ -78,6 +87,17 @@ class ValidateTests(unittest.TestCase):
         link.symlink_to(target)
         errors = VALIDATE.validate(self.root)
         self.assertTrue(any("symlink is not allowed" in error for error in errors))
+
+    def test_unknown_chain_skill(self):
+        self.write_chain([self.name, "missing-growth-skill"])
+        errors = VALIDATE.validate(self.root)
+        self.assertTrue(any("unknown skills" in error for error in errors))
+
+    def test_secret_format(self):
+        blocked = "sk-" + "x" * 32
+        (self.root / "README.md").write_text(blocked, encoding="utf-8")
+        errors = VALIDATE.validate(self.root)
+        self.assertTrue(any("possible provider token" in error for error in errors))
 
 
 if __name__ == "__main__":
