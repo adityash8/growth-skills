@@ -74,6 +74,16 @@ class ValidateTests(unittest.TestCase):
         errors = VALIDATE.validate(self.root)
         self.assertTrue(any("blocked private pattern" in error for error in errors))
 
+    def test_public_repo_url_is_allowed(self):
+        url = "https://" + VALIDATE.PUBLIC_REPO_URL + ".git"
+        (self.root / "README.md").write_text(url, encoding="utf-8")
+        self.assertEqual(VALIDATE.validate(self.root), [])
+
+    def test_owner_name_outside_repo_url_is_blocked(self):
+        (self.root / "README.md").write_text("Adi" + "tya", encoding="utf-8")
+        errors = VALIDATE.validate(self.root)
+        self.assertTrue(any("blocked private pattern" in error for error in errors))
+
     def test_absolute_home_path(self):
         blocked = "/" + "Users" + "/someone/private.txt"
         (self.root / "README.md").write_text(blocked, encoding="utf-8")

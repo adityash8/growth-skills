@@ -9,8 +9,15 @@
     },
     {
       "id": "baseline",
-      "skills": ["growth-audit"],
+      "skills": ["growth-audit", "evidence-led-growth-audit"],
+      "selection": "use evidence-led-growth-audit when a comprehensive report needs source reconciliation and artifact verification",
       "output": "audit scorecard"
+    },
+    {
+      "id": "measure",
+      "skills": ["marketing-tagging-audits"],
+      "condition": "when tagging, consent, event provenance, or attribution quality is uncertain",
+      "output": "measurement evidence and unresolved gaps"
     },
     {
       "id": "diagnose",
@@ -18,7 +25,9 @@
         "customer-research",
         "channel-fit-diagnostic",
         "power-user-curve",
-        "saas-unit-economics-audit"
+        "saas-unit-economics-audit",
+        "paid-analysis-review",
+        "conversational-ads-optimization"
       ],
       "selection": "invoke only specialists required by the current constraint",
       "output": "constraint brief"
@@ -44,6 +53,13 @@
       "id": "test",
       "skills": ["experiment-design"],
       "output": "experiment specification"
+    },
+    {
+      "id": "execute",
+      "skills": ["paid-media-creative-operations"],
+      "selection": "use for paid creative execution; otherwise use the tools required by the intervention",
+      "condition": "only within the approved experiment and execution scope",
+      "output": "verified execution result"
     },
     {
       "id": "operationalize",

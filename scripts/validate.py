@@ -23,6 +23,7 @@ PRIVATE_PATTERNS = (
     "startups" + "/",
     "." + "agent" + "/",
 )
+PUBLIC_REPO_URL = "github.com/" + "adi" + "tya" + "sh8/growth-skills"
 HOME_PATH = re.compile(r"/(?:Users|home)/[^/\s]+/", re.IGNORECASE)
 SECRET_PATTERNS = (
     ("cloud key", re.compile(r"\bAKIA[0-9A-Z]{16}\b")),
@@ -175,7 +176,7 @@ def validate(root: Path) -> list[str]:
 
     for path in text_files(root):
         text = path.read_text(encoding="utf-8")
-        lowered = text.lower()
+        lowered = text.lower().replace(PUBLIC_REPO_URL, "")
         blocked_private = False
         for pattern in PRIVATE_PATTERNS:
             if pattern.lower() in lowered:

@@ -4,6 +4,12 @@ All notable changes use this file.
 
 ## [Unreleased]
 
+### Added: paid operations and evidence workflows
+
+- Five generic skills for paid creative operations, marketing tagging audits, conversational ads optimization, paid analysis review, and evidence-led growth audits.
+- Reusable references for approval scope, state verification, consent and attribution checks, financial reconciliation, and report QA.
+- Catalog and chain integration, including conditional measurement review and an explicit verified execution stage.
+
 ### Added
 
 - Initial fourteen-skill strategy and execution catalog.

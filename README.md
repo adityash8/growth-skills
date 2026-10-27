@@ -1,112 +1,90 @@
-# Growth Skills
+# Growth Skills 🚀
 
-Fourteen evidence-first Agent Skills that connect growth strategy to verified execution.
+Nineteen Agent Skills for growth people who are tired of "10 hacks to 10x your funnel". Each skill finds the one thing actually holding growth back, fixes that, tests it, and only puts the winners on repeat.
 
-This repository is for operators who want a decision system, not a bag of tactics. The skills separate facts from assumptions, identify the binding constraint, design a focused intervention, test it, and operationalize only what works.
+Facts and guesses stay apart. Benchmarks come with a date. Nothing spends money or ships to production without a human saying yes.
 
-## Packs
+## The skills
 
-Install only the pack you need. Every skill remains independently usable.
+### 🧭 Figure out what's broken
 
-### Strategy and diagnosis
-
-| Skill | Use it for |
+| Skill | Use it to... |
 |---|---|
-| `growth-strategist` | Route an ambiguous growth problem and select the next diagnostic |
-| `growth-audit` | Build an evidence-backed baseline across the growth system |
-| `customer-research` | Extract pains, triggers, objections, alternatives, and decision criteria |
-| `channel-fit-diagnostic` | Choose channels the product, market, and model can support |
-| `power-user-curve` | Measure engagement depth and cohort movement |
-| `saas-unit-economics-audit` | Test CAC, payback, margin, retention, and LTV by segment |
+| `growth-strategist` | Turn a vague "growth is slow" into the next decision worth making |
+| `growth-audit` | Score the whole growth system and get an evidence-backed baseline |
+| `evidence-led-growth-audit` | Ship a full growth audit report where every number has a source |
+| `marketing-tagging-audits` | Check that your pixels, GTM, conversion APIs and consent setup report the truth |
+| `customer-research` | Pull real pains, triggers and objections out of interviews and reviews |
+| `channel-fit-diagnostic` | Pick channels your product, market and pricing can actually support |
+| `power-user-curve` | See how deep engagement really goes, cohort by cohort |
+| `saas-unit-economics-audit` | Stress-test CAC, payback, margin and LTV by segment |
+| `paid-analysis-review` | Fact-check paid media reports and decks before they move budget |
+| `conversational-ads-optimization` | Test and scale ads inside AI chat products like ChatGPT |
+
+### 🛠️ Fix it
+
+| Skill | Use it to... |
+|---|---|
 | `growth-roadmap` | Turn one constraint into a focused quarterly plan |
+| `offer-design` | Build an offer people want and you can actually deliver |
+| `onboarding-activation` | Get new users to their first win faster |
+| `product-led-acquisition` | Let the product show itself to people who don't use it yet |
+| `viral-loop` | Measure and improve invites, sharing and collaboration |
+| `retention-state` | Make the product more useful the longer someone uses it, without dark patterns |
 
-### Execution and learning
+### 🔁 Prove it and repeat it
 
-| Skill | Use it for |
+| Skill | Use it to... |
 |---|---|
-| `offer-design` | Build a credible, deliverable commercial offer |
-| `onboarding-activation` | Shorten the path to a measurable first-value event |
-| `product-led-acquisition` | Expose product value to non-users through normal use |
-| `viral-loop` | Measure and improve invitations, collaboration, and sharing loops |
-| `retention-state` | Build ethical compounding value and switching costs |
-| `experiment-design` | Convert an intervention into a decision-ready test |
-| `marketing-loops` | Repeat proven actions with state, approvals, verification, and stop rules |
+| `experiment-design` | Turn a hunch into a test with one metric and a decision rule |
+| `paid-media-creative-operations` | Roll out new ad creative in safe batches, with approvals and rollback |
+| `marketing-loops` | Put proven plays on a schedule with state, approvals and stop rules |
 
-## Full growth-system chain
+## The chain
 
-[`chains/growth-system.md`](chains/growth-system.md) connects the repository end to end:
+Want the full ride? [`chains/growth-system.md`](chains/growth-system.md) runs the skills in order:
 
 ```text
-route
-  → baseline audit
-  → constraint-specific diagnosis
-  → quarterly roadmap
-  → intervention design
-  → experiment
-  → verified execution
-  → recurring loop for winners
-  → refreshed strategy
+route → baseline → measure → diagnose → roadmap → design → test → execute → loop → learn
 ```
 
-The chain is an invoke-in-order playbook, not a workflow engine. Conditional stages run only when the active constraint requires them. The machine-readable stage manifest is [`chains/growth-system.json`](chains/growth-system.json).
+It's a playbook your agent follows, not a workflow engine. Stages only run when the current constraint needs them.
 
 ## Install
 
-Clone the repository, then copy or symlink individual folders under `skills/` into the skill directory used by your Agent Skills-compatible client.
-
 ```bash
-git clone https://github.com/<owner>/growth-skills.git
+git clone https://github.com/adityash8/growth-skills.git
+cp -R growth-skills/skills/growth-strategist ~/.claude/skills/
 ```
 
-Common destinations include:
+Copy whole skill folders (keep `references/` and `scripts/` inside). They work in any Agent Skills client: Claude Code (`~/.claude/skills/`), Codex (`~/.codex/skills/`), Cursor, and friends.
 
-- Claude Code: `~/.claude/skills/`
-- Codex: `~/.codex/skills/`
-- Cursor: the configured skills directory
-- OpenClaw: the configured skills directory
-
-Install the strategy pack first. Add execution skills only when the agent must operate that part of the chain.
+Start with `growth-strategist`. It routes to the rest.
 
 ## Use
 
-Invoke a skill by name, or start with the chain:
-
 ```text
-Follow the growth-system chain for this product. Stop after each gate when evidence is missing.
+Follow the growth-system chain for this product. Stop at each gate when evidence is missing.
+Audit our tracking before we trust last month's CAC.
+Review this paid media deck. What is actually true?
 ```
 
-Each skill defines:
+## What this repo won't do
 
-- required inputs;
-- an evidence-aware procedure;
-- a concrete output contract;
-- guardrails and stop conditions;
-- handoffs to the next relevant skill.
+- Ship credentials or private integrations. Bring your own.
+- Spend money, publish, message users or touch production on its own.
+- Pretend a 2021 benchmark applies to your business.
+- Replace your lawyer, accountant or statistician.
 
-## Non-goals
-
-This repository does not:
-
-- provide platform credentials or private integrations;
-- assume access to a particular analytics or advertising vendor;
-- auto-spend, publish, message users, or modify production systems;
-- replace legal, privacy, finance, or statistical review;
-- promise universal growth benchmarks;
-- bundle imported marketing packs or client playbooks.
-
-## Validation
+## Checks
 
 ```bash
-make validate
+make validate   # catalog, chain, frontmatter, size limits, secrets and privacy scan
 make test
 ```
 
-Validation checks catalog and chain parity, frontmatter, description and file-size limits, symlink escapes, common secret formats, and blocked private patterns. The test suite covers failure cases.
+## Credits and license
 
-## Provenance and license
+Frameworks that shaped these skills are credited in [SOURCES.md](SOURCES.md). Everything here is written from scratch under the [MIT License](LICENSE). Want to contribute? Read [CONTRIBUTING.md](CONTRIBUTING.md). Found something sensitive? Use [SECURITY.md](SECURITY.md), not a public issue.
 
-Repository-authored content is available under the [MIT License](LICENSE). Framework-level influences and the quotation policy are documented in [SOURCES.md](SOURCES.md). Third-party trademarks and source materials remain the property of their owners.
-
-## Contributing and security
-
-Read [CONTRIBUTING.md](CONTRIBUTING.md) before proposing a skill. Report sensitive findings through [SECURITY.md](SECURITY.md), not a public issue.
+If a skill saves you a meeting, a star is appreciated. ⭐

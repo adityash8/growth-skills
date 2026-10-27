@@ -54,5 +54,25 @@
   {
     "name": "marketing-loops",
     "description": "Turn a proven growth action into a safe recurring loop with explicit triggers, state, approvals, idempotency, monitoring, and stop conditions."
+  },
+  {
+    "name": "paid-media-creative-operations",
+    "description": "Use when mapping approved ad copy and assets into live paid campaigns with protected controls, bounded changes, approval gates, and independent verification."
+  },
+  {
+    "name": "marketing-tagging-audits",
+    "description": "Use when auditing paid-media tracking to verify live tags, consent, event pairing, attribution, and safe publication gates."
+  },
+  {
+    "name": "conversational-ads-optimization",
+    "description": "Use when diagnosing conversational ad delivery, attribution, activation, landing-page fit, and cohort economics before changing campaigns or scaling spend."
+  },
+  {
+    "name": "paid-analysis-review",
+    "description": "Use when reviewing paid-media reports, experiment results, or decks to verify metrics, reconcile attribution, and turn evidence into bounded decisions."
+  },
+  {
+    "name": "evidence-led-growth-audit",
+    "description": "Use when a growth audit needs reconciled analytics and billing, traceable evidence, current source checks, and a verified final report."
   }
 ]
