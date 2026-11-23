@@ -30,7 +30,7 @@ Unknowns stay explicit.
 
 1. **Run the prerequisite gate.** Confirm users reach value and retained users exist. If not, route to `onboarding-activation` or `retention-state` before adding prompts.
 2. **Name the loop.** Define the actor, action, recipient, recipient value, return path, and activation event.
-3. **Choose the natural mechanic.** Prefer collaboration, utility, or valuable shared output. Add incentives only when the economics and abuse controls work.
+3. **Choose the natural mechanic.** Prefer collaboration, utility, or valuable shared output. Before offering a reward, check whether retained users can actually use it, whether it pays for referrals that would have happened anyway, and whether the economics and abuse controls work.
 4. **Instrument causality.** Persist a privacy-safe referrer or artifact identifier from exposure through activation. Separate caused users from users who merely arrived in the same period.
 5. **Measure by cohort.** For each causing cohort, count activated users attributed to that cohort over a fixed maturation window. Report the window and attribution limits.
 6. **Map the step funnel.** Measure exposure → open → landing → signup → activation → first retained action. Do not optimize aggregate sharing while one downstream step is broken.

@@ -35,7 +35,7 @@ Use this skill when average engagement ratios hide whether a product has a deepl
    - workweek pattern: high weekday frequency with expected weekend drop.
 6. **Compare cohorts.** Overlay at least three comparable cohorts. Movement toward higher-frequency buckets may indicate improving engagement; check releases, audience mix, and data changes before assigning cause.
 7. **Profile the tails.** Compare high-frequency and one-day users by source, segment, first-session behavior, plan, and retained outcome.
-8. **Connect to the model.** Decide whether frequency matters for value and revenue. A left-heavy curve is not automatically bad for high-value episodic products.
+8. **Connect to the model.** Decide whether frequency matters for value and revenue. A left-heavy curve is not automatically bad for high-value episodic products. For flat-price products with material usage costs, compare cost to serve with realized revenue in each frequency band over the same period. Heavy use can be valuable to customers while costing more than they pay.
 
 ## Output contract
 
@@ -44,7 +44,7 @@ Use this skill when average engagement ratios hide whether a product has a deepl
 3. **Shape classification and uncertainty.**
 4. **Cohort movement:** improving, flat, degrading, or incomparable.
 5. **Power-user profile and casual-user contrast.**
-6. **Business implication:** activation, retention, monetization, or audience quality.
+6. **Business implication:** activation, retention, monetization, or audience quality, with cost and revenue by band when applicable.
 7. **Next queries:** three to five analyses that can change the decision.
 
 ## Guardrails

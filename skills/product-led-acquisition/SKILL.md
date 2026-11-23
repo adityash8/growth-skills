@@ -38,7 +38,7 @@ If one link is structurally weak, incentives will not repair the loop.
    - marketplace supply-demand participation;
    - audience or community contribution;
    - two-sided referral where both parties gain real value.
-4. **Remove recipient friction.** Let the non-user understand the value before registration where privacy permits. Preserve context across the signup boundary.
+4. **Remove recipient friction.** Let the non-user understand the value before registration where privacy permits. Preserve context across the signup boundary. For artifacts that ask recipients to complete something, measure what recipients see at completion, not just the invite or email footer. Test any attribution there without obscuring the sender's brand or disrupting the recipient's task.
 5. **Design the return path.** The new user must create another valuable exposure event; otherwise the mechanic is a one-time referral, not a loop.
 6. **Instrument the chain.** Measure exposure rate, recipient engagement, signup conversion, activation, and repeat-loop creation by cohort.
 7. **Estimate the honest ceiling.** Use eligible actions × exposure rate × recipient response × activation. State which factor caps growth.

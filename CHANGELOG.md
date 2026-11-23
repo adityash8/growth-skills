@@ -4,6 +4,12 @@ All notable changes use this file.
 
 ## [Unreleased]
 
+### Updated: public skill procedures
+
+- Added a source-by-source number audit for paid reports and an ordered diagnostic for stalled growth.
+- Refined customer evidence checks, channel selection, attribution checks, usage costs, and the rules for sharing, retention, and recurring messages.
+- Documented installation for Agent Skills clients without requiring a particular client.
+
 ### Added: paid operations and evidence workflows
 
 - Five generic skills for paid creative operations, marketing tagging audits, conversational ads optimization, paid analysis review, and evidence-led growth audits.
