@@ -18,6 +18,8 @@ Use this skill after a constraint has been diagnosed. If the problem is still â€
 
 ## Procedure
 
+If growth is flat or falling, read [stalled-growth triage](references/stalled-growth-triage.md) before setting the objective. When several constraints appear at once, use the order in that reference and carry the others into the plan as constraints, not second objectives.
+
 1. **Write one outcome.** Use a business result, not an activity. Include the baseline, direction, horizon, and measurement owner when known.
 2. **Name the constraint.** Explain why it blocks the outcome and what evidence could disprove it.
 3. **Choose one strategic bet.** State the mechanism that should move the constraint. Reject parallel themes that compete for the same scarce resource.
@@ -28,7 +30,7 @@ Use this skill after a constraint has been diagnosed. If the problem is still â€
 8. **Assign decisions.** Name the owner only when known. Define the review cadence and the threshold for scale, revise, or stop.
 9. **Protect focus.** Create a stop list and a parking lot. A roadmap without exclusions is a backlog.
 
-Use `references/roadmap-template.md` for the final artifact.
+Use the [roadmap template](references/roadmap-template.md) for the final artifact. Treat funnel rates as diagnostics: compare them only with matching definitions, windows, segments, and sales motions. An unmatched benchmark is context, not a reason to change the roadmap.
 
 ## Output contract
 

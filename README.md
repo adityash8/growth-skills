@@ -1,90 +1,52 @@
 # Growth Skills 🚀
 
-Nineteen Agent Skills for growth people who are tired of "10 hacks to 10x your funnel". Each skill finds the one thing actually holding growth back, fixes that, tests it, and only puts the winners on repeat.
+**Know what’s holding growth back before you spend more to fix it.**
 
-Facts and guesses stay apart. Benchmarks come with a date. Nothing spends money or ships to production without a human saying yes.
+Give your agent a funnel, a campaign report, or a question you can’t answer yet. Get one next decision and the evidence that could change it.
 
-## The skills
+## Start with your question
 
-### 🧭 Figure out what's broken
-
-| Skill | Use it to... |
+| If you’re asking… | Start with |
 |---|---|
-| `growth-strategist` | Turn a vague "growth is slow" into the next decision worth making |
-| `growth-audit` | Score the whole growth system and get an evidence-backed baseline |
-| `evidence-led-growth-audit` | Ship a full growth audit report where every number has a source |
-| `marketing-tagging-audits` | Check that your pixels, GTM, conversion APIs and consent setup report the truth |
-| `customer-research` | Pull real pains, triggers and objections out of interviews and reviews |
-| `channel-fit-diagnostic` | Pick channels your product, market and pricing can actually support |
-| `power-user-curve` | See how deep engagement really goes, cohort by cohort |
-| `saas-unit-economics-audit` | Stress-test CAC, payback, margin and LTV by segment |
-| `paid-analysis-review` | Fact-check paid media reports and decks before they move budget |
-| `conversational-ads-optimization` | Test and scale ads inside AI chat products like ChatGPT |
+| Where are we losing growth? | [`growth-strategist`](skills/growth-strategist/SKILL.md) picks the next diagnostic instead of handing you a list of tactics. |
+| Can we trust what we’re measuring? | [`marketing-tagging-audits`](skills/marketing-tagging-audits/SKILL.md) follows the event from the browser to the destination. [`paid-analysis-review`](skills/paid-analysis-review/SKILL.md) checks the numbers behind a budget call. |
+| What should we work on this quarter? | [`growth-roadmap`](skills/growth-roadmap/SKILL.md) turns one constraint into a plan with owners and stop rules. |
+| How will we know the change worked? | [`experiment-design`](skills/experiment-design/SKILL.md) sets the metric, comparison, and decision rule before results come in. |
 
-### 🛠️ Fix it
+Browse all 19 skills in the [catalog](catalog.json). For the full sequence, give your agent the [growth-system playbook](chains/growth-system.md). It’s a guide for choosing and running the right skills in order, not a workflow engine.
 
-| Skill | Use it to... |
-|---|---|
-| `growth-roadmap` | Turn one constraint into a focused quarterly plan |
-| `offer-design` | Build an offer people want and you can actually deliver |
-| `onboarding-activation` | Get new users to their first win faster |
-| `product-led-acquisition` | Let the product show itself to people who don't use it yet |
-| `viral-loop` | Measure and improve invites, sharing and collaboration |
-| `retention-state` | Make the product more useful the longer someone uses it, without dark patterns |
+## Install and try it ⚡
 
-### 🔁 Prove it and repeat it
-
-| Skill | Use it to... |
-|---|---|
-| `experiment-design` | Turn a hunch into a test with one metric and a decision rule |
-| `paid-media-creative-operations` | Roll out new ad creative in safe batches, with approvals and rollback |
-| `marketing-loops` | Put proven plays on a schedule with state, approvals and stop rules |
-
-## The chain
-
-Want the full ride? [`chains/growth-system.md`](chains/growth-system.md) runs the skills in order:
-
-```text
-route → baseline → measure → diagnose → roadmap → design → test → execute → loop → learn
-```
-
-It's a playbook your agent follows, not a workflow engine. Stages only run when the current constraint needs them.
-
-## Install
+These are [Agent Skills](https://agentskills.io/), not a plugin for one client. From the project where you want to use them, clone this collection once:
 
 ```bash
-git clone https://github.com/adityash8/growth-skills.git
-cp -R growth-skills/skills/growth-strategist ~/.claude/skills/
+git clone https://github.com/adityash8/growth-skills.git ../growth-skills
 ```
 
-Copy whole skill folders (keep `references/` and `scripts/` inside). They work in any Agent Skills client: Claude Code (`~/.claude/skills/`), Codex (`~/.codex/skills/`), Cursor, and friends.
-
-Start with `growth-strategist`. It routes to the rest.
-
-## Use
-
-```text
-Follow the growth-system chain for this product. Stop at each gate when evidence is missing.
-Audit our tracking before we trust last month's CAC.
-Review this paid media deck. What is actually true?
-```
-
-## What this repo won't do
-
-- Ship credentials or private integrations. Bring your own.
-- Spend money, publish, message users or touch production on its own.
-- Pretend a 2021 benchmark applies to your business.
-- Replace your lawyer, accountant or statistician.
-
-## Checks
+Copy the whole skill folders so their references stay together. The block uses `.agents/skills` for Codex and Amp. Change `SKILLS_DIR` to `.claude/skills` for Claude Code or to the directory documented by your agent.
 
 ```bash
-make validate   # catalog, chain, frontmatter, size limits, secrets and privacy scan
-make test
+(
+  SKILLS_DIR=.agents/skills
+  for source in ../growth-skills/skills/*; do
+    target="$SKILLS_DIR/${source##*/}"
+    if [ -e "$target" ] || [ -L "$target" ]; then
+      printf 'Install stopped: %s already exists.\n' "$target" >&2
+      exit 1
+    fi
+  done
+  mkdir -p "$SKILLS_DIR" && cp -R ../growth-skills/skills/* "$SKILLS_DIR/"
+)
 ```
 
-## Credits and license
+If any skill name conflicts, nothing is copied. To replace installed skills, move the conflicting folders to a backup location outside the skills directory, then rerun the copy block. Open the project in your agent and ask:
 
-Frameworks that shaped these skills are credited in [SOURCES.md](SOURCES.md). Everything here is written from scratch under the [MIT License](LICENSE). Want to contribute? Read [CONTRIBUTING.md](CONTRIBUTING.md). Found something sensitive? Use [SECURITY.md](SECURITY.md), not a public issue.
+```text
+Use growth-strategist to find what's holding back activation. Use the attached funnel export and name the next check that could change your answer.
+```
 
-If a skill saves you a meeting, a star is appreciated. ⭐
+Start with exports or authorized read access. Running an audit does not grant permission to spend, publish, send messages, or change production. If evidence is missing, the skills ask for a specific check rather than inventing a number.
+
+From the cloned repo, run `make validate` and `make test` (Python 3 and Make).
+
+[Sources and credits](SOURCES.md) · [MIT License](LICENSE) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)

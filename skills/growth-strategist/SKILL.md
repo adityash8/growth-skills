@@ -24,16 +24,17 @@ Mark every input as **observed**, **reported**, **estimated**, or **unknown**.
 
 1. **Define the outcome.** Convert “grow” into one business result, a baseline, a target direction, and a time horizon. Reject task-shaped goals.
 2. **Map the system.** Trace demand → acquisition → activation → retention → monetization. Include measurement quality and operating capacity as upstream constraints.
-3. **Find the binding constraint.** Select the stage where improvement would change the business result now. Distinguish a real bottleneck from the easiest metric to access.
+3. **Find the binding constraint.** Compare the plausible recoverable outcome, eligible population, cost, and uncertainty for each serious candidate. Select the stage where improvement would change the business result now, not the stage with the easiest metric to access.
 4. **Check evidence strength.** Prefer product and revenue data over anecdotes; prefer segmented trends over blended snapshots. If evidence is weak, design the smallest diagnostic before recommending a program.
 5. **Route the work.** Choose one primary skill from the table below. Use a second only when it resolves a dependency.
-6. **Set a decision rule.** State what evidence would confirm, reject, or change the chosen path.
+6. **Set a decision rule.** State what evidence would confirm, reject, or change the chosen path. If the next step is a diagnostic, give the user something they can run, such as a query outline, cohort worksheet, or interview guide.
 
 ## Routing
 
 | Signal | Primary skill |
 |---|---|
 | Baseline is missing or several stages may be broken | `growth-audit` |
+| Suspect tagging or attribution could change the verdict | `marketing-tagging-audits` |
 | Constraint is known but work is scattered | `growth-roadmap` |
 | No acquisition channel has structural traction | `channel-fit-diagnostic` |
 | Existing users could expose value to non-users | `product-led-acquisition` |

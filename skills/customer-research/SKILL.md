@@ -30,7 +30,10 @@ Research may analyze existing material or define a new evidence-gathering plan. 
 7. **Code evidence.** Tag each item by pain, trigger, desired outcome, alternative, objection, proof requirement, decision criterion, and lifecycle stage.
 8. **Count carefully.** Report mention counts only within the reviewed sample. Do not convert a convenience sample into market prevalence.
 9. **Find contrasts.** Compare segments and outcomes. A pattern that appears only among retained users may matter more than the most common complaint.
-10. **Rank implications.** Score each finding by evidence strength, decision relevance, and expected consequence if wrong.
+10. **Try to disprove the leading themes.** Find specific examples and counterexamples, then check every quoted line against its original record. Use a clearly labeled paraphrase when the wording differs. Drop quotes that cannot be located. Keep subjective intent separate from what an event or transcript actually proves.
+11. **Rank implications.** Score each finding by evidence strength, decision relevance, and expected consequence if wrong.
+
+When coding a fixed sample of conversations, read each complete conversation before clustering. Record one anonymized evidence row per conversation and code it before comparing with any expected labels. Keep incomplete conversations visible rather than counting partial retrieval as complete.
 
 ## Interview guide
 
@@ -56,7 +59,8 @@ Return:
 5. customer-language bank;
 6. unresolved contradictions;
 7. decision implications;
-8. next research or experiment required.
+8. next research or experiment required;
+9. quote-check summary: verified, paraphrased, and dropped.
 
 ## Evidence labels
 

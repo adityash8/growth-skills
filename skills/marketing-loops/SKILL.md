@@ -71,6 +71,7 @@ Return:
 
 - Never automate an unproven tactic merely because it is repeatable.
 - Default external sends, publishing, spending, deletion, and account changes to approval-required.
+- A successful messaging test does not authorize higher frequency or more recipients. Before asking to expand, compare the value from the extra sends with opt-outs, complaints, and the send cap. Define when repeated messages stop helping and should stop.
 - Do not place secrets in prompts, logs, command arguments, or state files.
 - Minimize personal data and preserve suppression, consent, and unsubscribe rules.
 - Fail closed when identity, scope, account, or permission is ambiguous.

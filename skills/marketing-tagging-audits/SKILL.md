@@ -78,7 +78,7 @@ Use [consent jurisdiction testing](references/consent-jurisdiction-testing.md) f
 
 1. Inspect the analytics schema before writing queries. Define event, person, session, purchase, and source fields.
 2. Break landing events down by source, medium, and campaign. Measure missing values and contradictions before merging aliases or casing variants.
-3. Trace explicit attribution fields through the active transport tag and its consumer. Variables existing on both sides do not prove forwarding.
+3. Trace explicit attribution fields through the active transport tag and its consumer. When a tag was replaced, compare its live field mapping with the paused predecessor: matching event and click IDs can persist even after campaign fields disappear. Variables existing on both sides do not prove forwarding.
 4. Treat convenience switches such as common-field forwarding as unverified until preview or runtime payloads show their actual output.
 5. Compare completed periods with consistent timezone, eligibility, test-account exclusions, and denominators. Check the explicit prior period when using comparison controls.
 6. Deduplicate canonical purchases using verified transaction/subscription identity. Keep platform-attributed conversions separate from product-event totals.

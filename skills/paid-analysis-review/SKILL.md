@@ -24,6 +24,10 @@ Review acquisition reports, experiment results, and decks before they guide budg
 6. Check denominators, duplicate events, cohort eligibility, uncertainty, and the causal language.
 7. Return specific replacement wording, a decision, and the smallest next check that could overturn it.
 
+## Verify a report against its sources
+
+When asked to verify the numbers, use the [number audit](references/number-audit.md). Confirm the exact report version and permitted sources before querying. Verify the underlying values, not just the wording or links.
+
 ## Keep measurement systems in their lanes
 
 | Source | What to verify | Limitation |
@@ -141,6 +145,6 @@ Return:
 3. **Reconciliation:** matched definitions and deltas, with missing or unmatched rows visible.
 4. **Decision:** hold, test, pause recommendation, or scale recommendation only when the agreed evidence gate supports it.
 5. **Next check:** owner, required evidence, approval boundary, and a falsification or stop rule.
-6. **Evidence appendix:** source timestamps, query scope, definitions, and unresolved gaps. Include only authorized, necessary data.
+6. **Evidence appendix:** source timestamps, query scope, definitions, and unresolved gaps. For a number audit, include the per-claim verification status and calculation. Include only authorized, necessary data.
 
 Stop sign-off when source scope is wrong, definitions conflict, required data is stale, the cohort cannot be identified, or rendered claims disagree with the evidence. Return the exact blocker and smallest check that resolves it.

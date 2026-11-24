@@ -19,7 +19,7 @@ Use this skill when choosing a primary acquisition channel, diagnosing a channel
 
 1. **Check model-market math.** Test whether realistic customers × reachable share × revenue per customer can support the outcome. If not, no channel fixes the model.
 2. **Define the economic ceiling.** Estimate the maximum sustainable acquisition cost from gross margin, retention, and cash-payback tolerance. Use sensitivity ranges.
-3. **Score product prerequisites.** For each channel, test whether the product has the attributes the channel rewards:
+3. **Score product and sales-motion fit.** Decide how a buyer first gets value and how they purchase: self-serve, developer adoption, sales-led, or a mix. Then test whether the product has the attributes each channel rewards:
    - existing intent for search and marketplaces;
    - broad, visual, fast-to-understand value for paid social;
    - high contract value and narrow reachable buyers for sales or outbound;
@@ -29,7 +29,7 @@ Use this skill when choosing a primary acquisition channel, diagnosing a channel
 4. **Score operational fit.** Check creative supply, sales capacity, content authority, instrumentation, landing experience, and speed of learning.
 5. **Identify the power-channel candidate.** Prefer the channel with structural fit and an observable early signal. Do not reward a channel merely because competitors use it.
 6. **Run a painted-door test.** Build the smallest honest test of demand or distribution before the expensive system. Define cost, timebox, success threshold, and invalidation condition.
-7. **Sequence the engine.** Distinguish initial kickstart work, the repeatable engine, conversion improvements, one-off boosts, and the trigger for testing a second engine.
+7. **Sequence the engine.** For first customers, name one place the audience already gathers and an advantage the team can use to reach them. Separate that work from the repeatable engine, conversion improvements, one-off boosts, and the trigger for testing a second engine.
 8. **Map platform risk.** State which external rule, auction, algorithm, or partner could break the engine and what hedge is proportionate.
 
 ## Output contract

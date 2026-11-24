@@ -34,7 +34,7 @@ Simple LTV is unsafe when churn is non-stationary, expansion is material, cohort
 ## Procedure
 
 1. **Validate definitions.** Confirm customer, acquisition cost, revenue, gross margin, churn, and cohort rules. Separate marketing-only CAC from fully loaded CAC.
-2. **Segment first.** Split by customer type, plan, geography, contract motion, and channel where sample size allows. Never let a strong segment hide a weak one.
+2. **Segment first.** Split by customer type, plan, geography, contract motion, and channel where sample size allows. Separate app-store and web billing when fees affect margins. Account for free-tier usage costs once under a stated accounting rule; do not charge them both to acquisition and to cost to serve. Never let a strong segment hide a weak one.
 3. **Build cohort economics.** Calculate cumulative gross profit by acquisition cohort and compare it with acquisition cost over time.
 4. **Calculate payback.** Use actual gross-profit timing. Include sales and onboarding delay where relevant.
 5. **Estimate LTV cautiously.** Prefer observed cohort gross profit. If using a formula, show why the retention process is stable enough.
@@ -58,7 +58,7 @@ Simple LTV is unsafe when churn is non-stationary, expansion is material, cohort
 - Do not use revenue LTV when costs are material; use gross profit.
 - Do not divide by churn when churn is near zero in a small or young cohort.
 - Do not mix annual and monthly rates without conversion.
-- Do not treat attributed customers as incremental customers automatically.
+- Label CAC based on attribution as attributed CAC. Do not use it alone as evidence that added spend would generate incremental customers at that cost.
 - Do not benchmark without matching business model, segment, date, and margin structure.
 - Do not scale a blended winner that contains a loss-making marginal segment.
 - Route channel structure to `channel-fit-diagnostic` and retention architecture to `retention-state`.

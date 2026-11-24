@@ -52,7 +52,7 @@ Evaluate seven forms of accumulated value:
 ## Guardrails
 
 - Do not block export merely to manufacture switching cost.
-- Do not confuse notifications or streaks with durable state.
+- Do not confuse notifications or streaks with durable state. If a streak helps a real recurring job, count meaningful actions, not opens or reminders. Let users take a planned break without losing earned progress. Skipping, pausing, or snoozing is not an action that extends the streak.
 - Do not claim causality from retained-user correlation alone.
 - Do not retain sensitive data without a valid user need and clear controls.
 - Product quality still matters; state cannot excuse a broken core job.
