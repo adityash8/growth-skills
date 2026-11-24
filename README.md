@@ -17,16 +17,29 @@ Browse all 19 skills in the [catalog](catalog.json). For the full sequence, give
 
 ## Install and try it ⚡
 
-These are [Agent Skills](https://agentskills.io/), not a plugin for one client. From the project where you want to use them, run the following. The example uses `.agents/skills` (Codex and Amp). For Claude Code, change the `SKILLS_DIR` line to `.claude/skills`. For another client, use its documented directory.
+These are [Agent Skills](https://agentskills.io/), not a plugin for one client. From the project where you want to use them, clone this collection once:
 
 ```bash
 git clone https://github.com/adityash8/growth-skills.git ../growth-skills
-SKILLS_DIR=.agents/skills
-mkdir -p "$SKILLS_DIR"
-cp -R ../growth-skills/skills/. "$SKILLS_DIR/"
 ```
 
-Copy whole folders so `SKILL.md`, references, and scripts stay together. Open the project in your agent and ask:
+Copy the whole skill folders so their references stay together. The block uses `.agents/skills` for Codex and Amp. Change `SKILLS_DIR` to `.claude/skills` for Claude Code or to the directory documented by your agent.
+
+```bash
+(
+  SKILLS_DIR=.agents/skills
+  for source in ../growth-skills/skills/*; do
+    target="$SKILLS_DIR/${source##*/}"
+    if [ -e "$target" ] || [ -L "$target" ]; then
+      printf 'Install stopped: %s already exists.\n' "$target" >&2
+      exit 1
+    fi
+  done
+  mkdir -p "$SKILLS_DIR" && cp -R ../growth-skills/skills/* "$SKILLS_DIR/"
+)
+```
+
+If any skill name conflicts, nothing is copied. To replace installed skills, move the conflicting folders to a backup location outside the skills directory, then rerun the copy block. Open the project in your agent and ask:
 
 ```text
 Use growth-strategist to find what's holding back activation. Use the attached funnel export and name the next check that could change your answer.
