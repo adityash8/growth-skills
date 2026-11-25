@@ -5,82 +5,170 @@ description: "Turn interviews, support records, reviews, and behavioral evidence
 
 # Customer Research
 
-Use this skill when a growth decision depends on understanding why people start, choose, hesitate, succeed, or leave.
+Use this skill when a growth decision depends on why people start, choose, hesitate, succeed, or leave.
+Do NOT use for offer or packaging decisions (`offer-design`), activation changes (`onboarding-activation`), retention flows (`retention-state`), or controlled test design (`experiment-design`). Hand those off with evidence.
 
-Research may analyze existing material or define a new evidence-gathering plan. Never fabricate participants, quotes, counts, or consensus.
+Never fabricate participants, quotes, counts, source access, or consensus. Analyze supplied material now; when evidence is missing, produce a research plan rather than invented findings.
 
-## Inputs
+## Before starting
 
-- decision the research must inform;
-- target segment and lifecycle stage;
-- existing interviews, calls, tickets, reviews, surveys, and behavioral data;
-- known sample limitations;
-- deadline and access constraints.
+Read supplied product and research context before asking questions. Open every deliverable with:
 
-## Procedure
+1. **Decision:** the concrete choice and its decision maker.
+2. **Hypothesis:** one falsifiable hypothesis and what evidence would contradict it.
+3. **Scope:** strategic, funnel-stage, or usability question. Rewrite vague requests such as “how do users feel?” around a decision or metric.
 
-1. **Write the decision question.** Use a choice the team must make, not “understand customers better.”
-2. **Define the evidence boundary.** List available sources, dates, segments, and missing populations.
-3. **Choose the mode.**
-   - **Synthesis:** analyze existing qualitative material.
-   - **Collection plan:** specify who to recruit, what to ask, and how to record evidence.
-4. **Sample for contrast.** Include successful users, stalled users, churned users, and qualified non-buyers when the decision requires them.
-5. **Ask about events, not opinions.** Reconstruct the trigger, prior alternative, search, evaluation, purchase, first value, and outcome.
-6. **Capture exact language.** Preserve short verbatim excerpts with source identifiers. Separate quotes from paraphrases.
-7. **Code evidence.** Tag each item by pain, trigger, desired outcome, alternative, objection, proof requirement, decision criterion, and lifecycle stage.
-8. **Count carefully.** Report mention counts only within the reviewed sample. Do not convert a convenience sample into market prevalence.
-9. **Find contrasts.** Compare segments and outcomes. A pattern that appears only among retained users may matter more than the most common complaint.
-10. **Try to disprove the leading themes.** Find specific examples and counterexamples, then check every quoted line against its original record. Use a clearly labeled paraphrase when the wording differs. Drop quotes that cannot be located. Keep subjective intent separate from what an event or transcript actually proves.
-11. **Rank implications.** Score each finding by evidence strength, decision relevance, and expected consequence if wrong.
+Infer what is reasonable from the request. Mark missing decision details, owners, segments, and dates `[placeholder]`; state assumptions and proceed with useful drafts. Ask only when a gap changes permission, scope, or risk.
 
-When coding a fixed sample of conversations, read each complete conversation before clustering. Record one anonymized evidence row per conversation and code it before comparing with any expected labels. Keep incomplete conversations visible rather than counting partial retrieval as complete.
+Inventory the sources, date range, target segment, lifecycle stage, sample limitations, deadline, and access constraints. Choose one or more modes:
 
-## Interview guide
+- **Existing assets:** transcripts, calls, surveys, support threads, reviews, or behavioral evidence.
+- **Online research:** public communities, review sites, and adjacent products.
+- **New collection plan:** interviews or surveys when existing evidence cannot answer the decision.
 
-Use open prompts such as:
+Without source access, name the missing export or source and draft the collection plan. Do not imply that research was retrieved or participants contacted.
 
-- What changed that made this worth solving now?
-- What did you do before looking for this product?
-- Which alternatives did you consider or keep using?
-- What nearly stopped the decision?
-- What happened in the first session that signaled value—or failed to?
-- What would make switching away easy or painful?
+## Analyze existing assets
 
-Avoid leading questions, hypothetical willingness-to-pay claims, and pitching during research.
+### Prepare the evidence
+
+Before analysis, write four short context blocks: project decision and stakes; business outcome; product capabilities and alternatives; participant profiles and lifecycle stages.
+
+For survey or CSV exports, map each column: customer words, internal tags, segmentation metadata, identifiers, and scale meaning. Never quote an internal note as customer language. Mark ambiguous responses separately instead of guessing their meaning.
+
+For support or chat material, read each thread through its final message before clustering. Analyze each thread separately: what is this person struggling with, and what is the root complaint? Store the label with the thread ID and raw-source link. Separate bugs, confusion, missing features, and expectation mismatches.
+
+### Extract and compare
+
+For each source capture:
+
+- functional, emotional, and social jobs;
+- pains and their intensity, especially unprompted complaints;
+- trigger events and prior attempts;
+- desired outcomes, exact vocabulary, and proof requirements;
+- alternatives, including doing nothing, hiring, and building internally;
+- objections, decision criteria, lifecycle stage, and described behavior.
+
+Attach source ID, segment, date, and location to material claims. Remove unnecessary personal information.
+
+Cluster themes and rank by evidence strength, decision relevance, and consequence if wrong. Report counts as unique participants or independent sources out of the reviewed sample, with the denominator. Repeated mentions by one person are not independent evidence; convenience samples do not establish market prevalence.
+
+Compare successful and retained customers against stalled, churned, bad-fit, and non-buyer groups where available. A trait distinguishes good customers only if the comparison group does not also share it. If the comparison group is absent, say so and keep the trait provisional.
+
+Weight recent evidence more heavily and state the date range. Note source bias: support tickets emphasize problems, online reviews emphasize strong opinions, and community participants may differ from mainstream buyers. Do not infer intent from analytics alone.
+
+### Evidence labels and confidence
+
+Keep evidence type separate from confidence:
+
+| Label | Meaning |
+|---|---|
+| Observed | Directly supported by supplied words or behavior |
+| Repeated | Appears independently across sources or participants |
+| Directional | Plausible pattern from a small, biased, or proxy sample |
+| Unknown | Required evidence is absent |
+
+Label every insight High, Medium, or Low confidence with its reason. As a qualitative guide, High needs at least three independent sources, unprompted evidence, and consistency across segments; Medium has two sources or limited segment coverage; Low has one source, prompted-only evidence, ambiguity, or contradictions. These are research heuristics, not statistical confidence levels.
+
+For a decision about a proposed solution, define a coding scale with real examples from the supplied data before tallying. Separate evidence the solution addresses the problem from cheaper fixes, engagement problems, operational failures, and unrelated losses. If examples are absent, mark the scale provisional. Mentions alone do not prove a solution would retain or convert anyone.
+
+### Verification before presenting
+
+1. Check each quote word for word against its source, speaker, and location. Preserve hedges, emotional words, and complete reasoning. Never stitch separate moments into one quotation.
+2. Mark each quote VERIFIED, PARAPHRASE, or NOT FOUND. Replace paraphrases with source wording or clearly label them outside quotation marks; drop NOT FOUND quotes. Never invent timestamps or participant IDs.
+3. Check contradictions within each participant's story, including stated preference versus behavior and later retractions or qualifications.
+4. List specific details under every theme, including uncommon details, with who said them and where.
+5. Look explicitly for evidence against the hypothesis. Report whether it held, broke, or remains mixed.
+6. Recheck all details and claims added during these passes. Lower confidence for thin evidence and keep unresolved contradictions visible.
+
+Close every deliverable, including survey analysis and all-clean passes, with:
+“Verification: X VERIFIED, Y PARAPHRASE fixed, Z NOT FOUND dropped.”
+Use actual counts only. If no source quotes were available, use zero counts and state that source verification was unavailable. Separately disclose any paraphrases retained as labeled summaries.
+
+## Find online research
+
+Choose sources by audience: category reviews for existing alternatives; public role-specific communities for raw language; public discussions for triggers; adjacent product reviews for an early category.
+
+Capture platform, URL, date, exact excerpt, surrounding context, sentiment, theme, and profile signals actually stated in the source. Do not infer private demographics or claim access to closed groups. Respect source access restrictions.
+
+When first-party evidence is absent, work outward: differentiator hypothesis, direct competitor reviews, comparable products, then adjacent audiences. Label proxy evidence and replace it with first-party evidence when available.
+
+## Plan interviews and surveys
+
+Choose interviews for “why” questions and small reachable populations; choose surveys for proportions when a suitable reachable population exists. A large convenience sample still does not establish market prevalence.
+
+Recruit for contrasts, including recent buyers or switchers, churned users, and qualified non-adopters. Separate goodwill feedback from independent demand. Draft recruitment and booking materials; obtain explicit approval before sending or activating anything.
+
+### Interviews
+
+Ask about one actual event: “Tell me about the last time you did this job.” Follow with “What happened next?” Reconstruct first thought, passive looking, active looking, deciding, first use, and ongoing use.
+
+Use four forces as a flexible checklist:
+
+- **Push:** why the old situation stopped working.
+- **Pull:** what outcome attracted them.
+- **Anxiety:** what worried them about change.
+- **Habit:** what kept them with the old approach.
+
+Ask what nearly stopped the choice, which alternatives they used, what they gave up, and how they recognized value. Probe functional, emotional, and social consequences. Observe a workflow walkthrough when recall cannot explain friction.
+
+Avoid pitching, leading questions, abstract feature wish lists, and hypothetical willingness to pay. For habitual purchases or choices the participant did not make, study usage or recruit recent switchers rather than forcing a buying story.
+
+Distinguish pain from pull: complaints show pain; payment, unsolicited interest, or continued use can show pull. Polite enthusiasm is insufficient.
+
+Plan small rounds per segment, review what new interviews add, and adjust the next round. Stop when added interviews stop changing the decision; continue if meaningful new evidence appears. Sample-size targets are planning heuristics, not proof of representativeness.
+
+### Surveys
+
+Write the decision rule before collection: which result changes which choice. Ask about past behavior, one idea per question, and label every scale point. For satisfaction, prefer a clearly labeled satisfaction item; preserve an existing recommendation-score series if needed for continuity, without comparing scores across companies.
+
+Use anonymous or pseudonymous collection for sensitive topics. Request follow-up contact consent separately so identity is not linked back to sensitive responses. Segment responses before analysis and preserve the difference between open-ended and multiple-choice answers.
+
+## Personas and maps
+
+Build personas from a consistent segment with at least five independent data points as a qualitative minimum; fewer points support only a research hypothesis. Proxy-based personas remain provisional even above that minimum.
+
+Include supported role and context, job, triggers, pains, desired outcomes, objections, alternatives, vocabulary, and channels. Leave unsupported details Unknown. Apply the retained-versus-churned comparison before calling a trait distinctive.
+
+For switch research, give a four-forces map with source excerpts, timeline, hire/fire criteria, conflicting jobs, counts, and confidence. Write jobs as “When I am [situation], help me [motivation], so I can [outcome]” without naming the product as the job.
+
+For a customer value map, show struggle, evaluation, and growth milestones. Tie first value to the convincing moment in customer evidence and give each milestone a proposed metric; label proposals as hypotheses.
+
+## Feedback records and bounded collection
+
+When creating a customer feedback dataset, use the approved population, schema, codebook, source scope, and data boundary. Do not silently change them or export raw text to an unapproved service.
+
+- Check exact source freshness and access; a missing or inaccessible source is not zero feedback.
+- Retrieve only the specified sample, exhaust permitted reply pages, and checkpoint coded rows. Report incomplete coverage explicitly.
+- Keep retrieval separate from independent coding. Compare expected labels only after coding and preserve disagreements.
+- Deduplicate by person and conversation; shared links may contain several people. Do not match by name alone or substitute a source-link hash for a required identity hash.
+- Report missing identity keys, unmatched joins, collisions, and structurally present but unusable evidence. Never invent compliant-looking keys or missing context.
+- Export only approved anonymized fields; mask identifying free text and check schema, unique keys, allowed values, and spreadsheet formula risks.
+- Approval for one calibration dataset does not authorize other populations, backfills, recurring automation, or live surveys. Search for an existing destination before creating one and read back exact targets after approved writes.
 
 ## Output contract
 
-Return:
+Choose the format that answers the decision: synthesis report, quote bank, persona, jobs map, competitive summary, research gap plan, switch map, or customer value map. State why it fits.
 
-1. decision question and evidence boundary;
-2. source and segment inventory;
-3. ranked findings with counts and short cited excerpts;
-4. contrasts between successful, stalled, churned, and non-buyer groups;
-5. customer-language bank;
-6. unresolved contradictions;
-7. decision implications;
-8. next research or experiment required;
-9. quote-check summary: verified, paraphrased, and dropped.
+Include the opening decision/hypothesis/scope block, source and segment inventory, ranked findings with cited excerpts and counts, group contrasts, language bank, unresolved contradictions, implications, and next research needed.
 
-## Evidence labels
+**Required decision-to-action table, before the closing verification tally:**
 
-- **Observed:** directly supported by supplied material or behavior.
-- **Repeated:** appears independently across multiple sources or participants.
-- **Directional:** plausible pattern from a small or biased sample.
-- **Unknown:** required evidence does not exist.
+| Rank | Finding or research priority | Source IDs | Evidence and confidence | Decision implication | Next owner/skill and evidence brief | Approval status |
+|---|---|---|---|---|---|---|
 
-## Guardrails
+Fill the table with actual findings; when evidence is absent, rank research priorities and use Unknown for source IDs. Each evidence brief includes the relevant sources, segment, uncertainty, and decision to make.
 
-- Remove or mask personal information not required for the decision.
-- Do not infer intent from analytics alone.
-- Do not present a loud participant as a representative segment.
-- Keep source, segment, and date attached to every material claim.
-- Stop collection when added interviews stop changing the decision, not at an arbitrary round number.
+Mark live actions **Requires explicit approval**: recruitment or survey messages, participant contact, publication, production record or flow edits, automation, and irreversible changes. Drafts and analysis can proceed immediately. Do not claim a handoff ran or an action occurred without its output.
 
 ## Handoffs
 
-- value and packaging decision → `offer-design`;
-- activation problem → `onboarding-activation`;
-- broad diagnosis → `growth-audit`;
-- testable hypothesis → `experiment-design`;
+Use only the relevant route and provide its evidence brief:
+
+- offer, value, pricing, or packaging decision → `offer-design`;
+- first-value milestone or activation problem → `onboarding-activation`;
+- engagement depth and usage curves → `power-user-curve`;
+- churn findings to retention work → `retention-state`;
+- controlled experiment design, including setup-help versus price tests → `experiment-design`;
+- broad growth diagnosis → `growth-audit`;
 - quarterly prioritization → `growth-roadmap`.
