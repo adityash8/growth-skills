@@ -121,6 +121,17 @@ Verify these against current documentation and the actual account before use:
 
 Stop before the next mutation if authority is missing, a target changed, source proof is incomplete, a protected control is affected, a URL fails QA, required permissions are absent, or live results differ from the manifest.
 
+## Sibling handoff check
+
+Before finalizing, name each relevant handoff:
+
+- `paid-analysis-review` for winner selection, attribution, or deeper performance review;
+- `marketing-tagging-audits` for tracking or URL parameter defects, including unavailable taxonomy or redirect checks;
+- the campaign strategist for budget, bidding, or targeting decisions;
+- the creative team for new concepts or copy.
+
+Pass along the evidence and missing inputs. A proposed handoff is not a completed review or permission to write. Do NOT use this skill to replace those strategy, analysis, tracking, or creative tasks.
+
 ## Output contract
 
 Return:
