@@ -11,7 +11,25 @@ Diagnose OpenAI Ads, ChatGPT Ads, or another conversational ad surface from deli
 
 Work through delivery, tracking, activation, intent and landing fit, cohort economics, then budget. Cheap clicks or signups alone do not prove a channel can scale.
 
-Use read-only access for diagnosis. Campaign, targeting, creative, conversion, upload, and spend changes require explicit authority for the named scope. Existing authorization does not need duplicate confirmation.
+Use read-only access for diagnosis. Live budget, campaign, targeting, creative, upload, activation, conversion, tracking, and publication changes require human approval for the named account, entities, exact change, and spend/country bounds. Honor existing approval within its scope; request approval only for uncovered changes.
+
+## Decision packet
+
+For every diagnosis or asset-refresh request, give a clear decision and one evidence-to-action table with columns: Scope | Evidence and source/window | Next action | Success metric | Stop or blocker | Next review trigger. Complete each row before answering; mark unsupported facts unknown and unapproved thresholds proposed. Drafts may follow the table. A metrics-only or copy-only table does not replace this decision table.
+
+## Evidence labels
+
+At each substantive claim, distinguish exported facts (source and window), calculated metrics (formula and source inputs), hypotheses, and unknowns. Recalculate every derived value before answering; never turn unavailable outcomes into zero or checkout events into customers. Numerical playbook gates, reporting delays, sample requirements, and budget increments are illustrative and unapproved until the operator adopts them; label that status where used. Supplied approved targets retain their authority. With no live access, use supplied exports now, request only missing evidence, and label current state unverified.
+
+## Specialist handoff packet
+
+Do NOT use for product onboarding implementation, tracking implementation, or asset production. Route those tasks to the relevant public skill:
+
+- activation and first product action → [onboarding-activation](../onboarding-activation/SKILL.md);
+- event instrumentation, UTM repair, or country-attribution joins → [marketing-tagging-audits](../marketing-tagging-audits/SKILL.md);
+- asset production or upload manifests → [paid-media-creative-operations](../paid-media-creative-operations/SKILL.md).
+
+Include the scoped task, source/window, event and attribution definitions, calculations, unknowns, hypothesis, next action, success metric, blocker, and review trigger. Every packet must explicitly state its permission boundary: any live budget, campaign, targeting, creative, upload, activation, conversion, tracking, or publication change requires human approval naming the account, entities, exact change, and spend/country bounds. Honor existing approval within that scope; request approval only for uncovered changes. Reads and drafts can proceed now. A job title alone is not a skill handoff; a no-execution statement alone is not a future approval requirement. Do not claim the sibling was loaded or executed without its actual output.
 
 ## Workflow
 
