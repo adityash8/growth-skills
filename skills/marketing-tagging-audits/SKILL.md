@@ -9,11 +9,18 @@ Audit GTM web/server containers, pixels, conversion APIs, first-party collectors
 
 ## Scope and authority
 
-- Start read-only. Inventory, preview, publication, credential rotation, and synthetic traffic are different permissions.
+- Complete read-only analysis and draft proposals now. Every deliverable must explicitly require prior user approval before any live edit or publication, event suppression/deletion, credential rotation/migration, or synthetic traffic (including test landings, signups, purchases, and transaction replays).
+- Verification instructions are a test plan until that traffic is authorized. Do not execute them or claim execution from an audit request alone. Inventory, preview, publication, credential changes, and synthetic traffic are separate permissions.
 - Use existing authorized access. A blocked read does not authorize a new connector, workflow dispatch, logging change, or secret retrieval.
 - Follow the requested resource order and reporting destination. A read-only audit does not authorize comments or status changes elsewhere.
 - When artifacts are allowed, use a fresh temporary directory and retain only the minimum redacted evidence. If files are forbidden, parse in memory.
 - Verify platform fields, template semantics, API compatibility, and consent behavior against current official docs and the installed version.
+
+## Broader measurement handoff
+
+Do NOT use for broader measurement plans or instrumentation implementation; hand that work to an available analytics specialist or the responsible measurement owner. This public collection has no dedicated instrumentation skill. Complete the bounded tagging audit now and include a redacted evidence bundle: event/measurement matrix, current mappings, observed findings, unknowns, missing runtime or destination receipts, and acceptance checks. Do not claim that the recipient has executed the work.
+
+For paid-media performance review, use `paid-analysis-review` with the audit findings and measurement limits.
 
 ## 1. Establish the live state
 
