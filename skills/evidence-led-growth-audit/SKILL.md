@@ -23,7 +23,7 @@ Use existing audit files as the starting contract; preserve supplied originals. 
 - Decision brief with the primary constraint, evidence strength, and unresolved contradictions.
 - Metric dictionary with populations, windows, identity units, exclusions, and financial definitions.
 - Source index with retrieval times, observation windows, filters, and safe evidence references.
-- Ranked recommendations with proposed roles, acceptance checks, falsification checks, and bounded next steps.
+- Ranked recommendations with proposed roles, acceptance checks, falsification checks, and bounded next steps. For each recommendation crossing a skill boundary, include a concrete handoff: name the available sibling, the supplied evidence and unresolved questions to pass, and its next reviewable deliverable. Route onboarding diagnosis to `onboarding-activation`, detailed financial modeling to `saas-unit-economics-audit`, A/B test planning to `experiment-design`, and product retention/state design to `retention-state`. Keep winback campaign execution separate from product-state design; no dedicated winback skill is included in this collection, so prepare a separate reviewable campaign brief with supplied evidence, unresolved questions, and approval requirements. If sibling content is unavailable, prepare the packet now and do not claim the sibling ran.
 - Artifact QA record and explicit limits on what was verified.
 
 ## Pitfalls and boundaries
@@ -32,4 +32,4 @@ Use existing audit files as the starting contract; preserve supplied originals. 
 - Pitfall: a completion before a signup anchor does not rule out a valid completion after it.
 - Pitfall: a polished chart does not reconcile incompatible metric definitions or currencies.
 - Keep organization-specific findings in the authorized audit deliverables, outside reusable skill instructions.
-- Do not deploy, publish, change credentials, enable campaigns, or send outreach as part of an audit. Prepare a separate, reviewable change request when implementation is needed.
+- Do not deploy, publish, change credentials, enable campaigns, delete data, or send outreach as part of an audit. Prepare a separate, reviewable change request when implementation is needed. Every report, including offline reports, must explicitly state that any live edit, publication, deletion, campaign launch or change, or outreach requires the user's specific approval of the concrete change request before execution. Preparing a draft or saying that nothing was executed does not substitute for this approval requirement.
