@@ -83,6 +83,8 @@ Audit normal exposure surfaces: physical use, shared links, exported artifacts, 
 
 For forms, signatures, events, or similar artifacts, inspect the recipient completion page. Explain the product and offer a create-your-own action after the recipient finishes their original task.
 
+For artifacts that ask recipients to complete something, measure what recipients see at completion and test completion-page attribution without obscuring the sender's brand or disrupting the recipient's task.
+
 When creators need white-label output, propose small branding changes with explicit permission and opt-out rules. Measure branded-artifact click-to-signup conversion per release step; track opt-out requests as a trust measure, not a separate acquisition change.
 
 ### User-generated content

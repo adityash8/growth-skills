@@ -27,6 +27,10 @@ Review acquisition reports, experiment results, and decks before they guide budg
 6. Check denominators, duplicate events, cohort eligibility, uncertainty, and the causal language.
 7. Return specific replacement wording, a decision, and the smallest next check that could overturn it.
 
+## Verify a report against its sources
+
+Use [number audits](references/number-audit.md) for read-only number audits.
+
 ## Number audit and missing evidence
 
 For verification requests, freeze a read-only brief before querying: exact artifact/version, authorized sources and account scope, window/timezone, comparison baseline, outcome/denominator, attribution model, allowed reads, prohibited writes, and requested delivery destination. Credentials never belong in the brief.
@@ -162,7 +166,7 @@ Return:
 3. **Reconciliation:** matched definitions and deltas, with missing or unmatched rows visible.
 4. **Decision:** hold, test, pause recommendation, or scale recommendation only when the agreed evidence gate supports it. For each entity, include verdict (confirmed, not confirmed, hold, or inconclusive), rule triggered, rule blocked, alternative, and source gaps. Partial windows or material entity changes require inconclusive calls.
 5. **Next check:** owner, required evidence, approval boundary, and a falsification or stop rule.
-6. **Evidence appendix:** source timestamps, query scope, definitions, and unresolved gaps. Include only authorized, necessary data.
+6. **Evidence appendix:** source timestamps, query scope, definitions, and unresolved gaps. For a number audit, include per-claim verification status and calculation. Include only authorized, necessary data.
 
 Stop sign-off when source scope is wrong, definitions conflict, required data is stale, the cohort cannot be identified, or rendered claims disagree with the evidence. Return the exact blocker and smallest check that resolves it.
 

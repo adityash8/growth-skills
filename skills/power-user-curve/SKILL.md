@@ -41,6 +41,8 @@ Do NOT use for activation-flow design (`onboarding-activation`), accumulated-val
 9. **Set an engagement target.** State a proposed target as a change in median active days for a named core cohort by a date. Look for friction and substitute behaviors before recommending new features. Choose the target from product evidence, not universal benchmarks.
 10. **Check AI serving costs.** For AI products on flat plans, add cost-to-serve and revenue per active-days band. Estimate cost from inference cost per active day times active days when defensible; flag bands where per-user cost exceeds matched-period plan revenue. Mark missing cost or revenue data unknown and request it before proposing tier economics.
 
+For any flat-price product with material usage costs, compare cost to serve with realized revenue by usage band over matched periods; mark missing inputs unknown.
+
 ## Output contract
 
 1. **One-line read, core-action definition and window rationale.** Include the headline share and count of weekly actives completing the core action on at least 5 of 7 days (L5/L7); for L30 use at least 20 of 30 days (L20+/L30). Report week-over-week growth of the weekly count when comparable prior data exists. State unavailable metrics and the missing data rather than inventing them.
@@ -48,7 +50,7 @@ Do NOT use for activation-flow design (`onboarding-activation`), accumulated-val
 3. **Shape classification and uncertainty.** Put the shape label on its own line: smile, left-leaning, right-leaning, or workweek smile. Explain frequency-dependent monetization exposure and the activation interpretation.
 4. **Cohort movement:** improving, flat, degrading, or incomparable. Include the core cohort's median active-day change against its target and dated release or acquisition hypotheses. A suspected cause remains a hypothesis.
 5. **Power-user profile and casual-user contrast.**
-6. **Business implication:** activation, retention, monetization, or audience quality.
+6. **Business implication:** activation, retention, monetization, or audience quality. Include cost and realized revenue by usage band when applicable.
 7. **Next queries:** three to five analyses that can change the decision. Always include core-action failure rate: unsuccessful attempts divided by all attempts, using an explicit success event and completion window. Missing attempt/success data means the rate is unavailable; provide the query or instrumentation specification. Treat shared power-user behaviors as hypotheses, not promised retention lifts.
 
 ## Guardrails

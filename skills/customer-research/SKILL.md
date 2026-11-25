@@ -38,6 +38,8 @@ For survey or CSV exports, map each column: customer words, internal tags, segme
 
 For support or chat material, read each thread through its final message before clustering. Analyze each thread separately: what is this person struggling with, and what is the root complaint? Store the label with the thread ID and raw-source link. Separate bugs, confusion, missing features, and expectation mismatches.
 
+For a fixed sample, read each complete conversation before clustering and record one anonymized evidence row per conversation. Keep incomplete conversations visible, excluded from evidence counts. Separate subjective intent from what the record proves.
+
 ### Extract and compare
 
 For each source capture:
@@ -50,6 +52,8 @@ For each source capture:
 - objections, decision criteria, lifecycle stage, and described behavior.
 
 Attach source ID, segment, date, and location to material claims. Remove unnecessary personal information.
+
+Before ranking, try to disprove the leading themes with examples and counterexamples; check every quoted line against its original record, label paraphrases, and drop quotes that cannot be found.
 
 Cluster themes and rank by evidence strength, decision relevance, and consequence if wrong. Report counts as unique participants or independent sources out of the reviewed sample, with the denominator. Repeated mentions by one person are not independent evidence; convenience samples do not establish market prevalence.
 

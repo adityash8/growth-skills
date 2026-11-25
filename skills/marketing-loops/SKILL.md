@@ -86,6 +86,10 @@ Classify every action before scheduling:
 - Keep secrets and raw personal data out of prompts, state, logs, and command
   arguments. Store only necessary identifiers and limit retention.
 
+Weigh the incremental value of an extra send against complaints, opt-outs, and
+frequency caps. Define when repetition stops helping: stop at a cap, a breached
+complaint/opt-out threshold, or no meaningful incremental outcome versus control.
+
 ## State, replay, and failures
 
 Use the platform's durable state store or a project-local file. Never depend only

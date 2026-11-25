@@ -32,6 +32,8 @@ For every unknown measurement or expected delta, name the export or observation 
 
 ## 1. Triage stalled or declining growth
 
+When the business metric is flat or falling, use [stalled-growth triage](references/stalled-growth-triage.md).
+
 Skip this step for an ordinary planning quarter. Otherwise check in order, stopping at the first evidenced failure; missing evidence stays unassessed:
 
 1. **Logo churn:** are losses offsetting acquisition? Customer ceiling = new customers per month / monthly logo churn rate, using comparable periods and a decimal rate. A supplied zero churn rate means no finite ceiling; unknown churn means unknown ceiling.
